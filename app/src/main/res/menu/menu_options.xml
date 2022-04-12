@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/menu_multiple_dice_type" android:id="@+id/menuMultiType"/>
+    <item android:title="@string/menu_adv_disadv" android:id="@+id/menuAdvDis"/>
+    <item android:title="@string/menu_char_roller" android:id="@+id/menuCharRoll"/>
+</menu>

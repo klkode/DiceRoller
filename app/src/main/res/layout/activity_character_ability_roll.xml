@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.CharacterAbilityRollActivity"
+    android:id="@+id/charAbilityRollLayout">
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/charAbGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <TextView
+        android:id="@+id/charAbAmountLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/amnt_dice_to_roll"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/charAbGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:maxLines="2"/>
+
+    <Spinner
+        android:id="@+id/charAbAmountDropDown"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/charAbAmountLbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/charAbGuideline"
+        app:layout_constraintTop_toTopOf="@+id/charAbAmountLbl" />
+
+    <TextView
+        android:id="@+id/charAbRerollLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/reroll_ones"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/charAbGuideline"
+        app:layout_constraintStart_toStartOf="@+id/charAbAmountLbl"
+        app:layout_constraintTop_toBottomOf="@+id/charAbAmountLbl"
+        android:maxLines="2"/>
+
+    <Spinner
+        android:id="@+id/charAbRerollDropDown"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/charAbRerollLbl"
+        app:layout_constraintEnd_toEndOf="@+id/charAbAmountDropDown"
+        app:layout_constraintStart_toStartOf="@+id/charAbAmountDropDown"
+        app:layout_constraintTop_toTopOf="@+id/charAbRerollLbl" />
+
+    <Button
+        android:id="@+id/charAbRollBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="rollCharAbilityScores"
+        android:text="@string/roll_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charAbRerollLbl" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/charAbRollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/charAbBackBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/charAbRollBtn" />
+
+    <Button
+        android:id="@+id/charAbBackBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="back"
+        android:text="@string/back_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

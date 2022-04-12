@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Dice Roller</string>
+    <string name="advantage_disadvantage_name">Advantage/Disadvantage</string>
+    <string name="char_ability_name">Character Ability Scores</string>
+    <string name="multi_name">Multi Dice Roller</string>
+
+    <string name="amount_title">Amount</string>
+    <string name="type_title">Dice Type</string>
+    <string name="plus_title">+</string>
+    <string name="neg_title">-</string>
+    <string name="modifier_title">Modifier</string>
+    <string name="d_lbl">d</string>
+    <string name="advantage">Advantage</string>
+    <string name="disadvantage">Disadvantage</string>
+    <string name="amnt_dice_to_roll">How many dice to roll?</string>
+    <string name="reroll_ones">What to do about 1s?</string>
+    <string name="other_caps">OTHER</string>
+    <string name="other_dice_title">Custom Dice</string>
+
+    <string name="roll_btn">Roll</string>
+    <string name="clear_btn">Clear</string>
+    <string name="back_btn">Back</string>
+    <string name="reset_btn">Reset</string>
+
+    <string name="err_empty_die_type">Please enter a number for your other die type</string>
+    <string name="err_zero_die_type">You cannot roll a zero-sided die</string>
+    <string name="err_zero_die_amount">You cannot roll zero dice</string>
+    <string name="err_invalid_die_type">Invalid die type entered</string>
+    <string name="err_missing_amount">Please enter the amount of dice to roll</string>
+    <string name="err_missing_modifier">Please enter a modifier number or 0 for no modifier</string>
+    <string name="err_no_roll_selected">Please roll at least one die</string>
+
+    <string name="hint_amount">1</string>
+    <string name="hint_other_type">50</string>
+    <string name="hint_modifier">0</string>
+    <string name="hint_other_question">\?</string>
+
+    <string name="menu_adv_disadv">Advantage/Disadvantage</string>
+    <string name="menu_char_roller">Character Ability Scores</string>
+    <string name="menu_multiple_dice_type">Multi Dice Roller</string>
+
+    <string name="dice_opt_three">3 Dice - Hard Core</string>
+    <string name="dice_opt_four">4 Dice - Little Leeway</string>
+    <string name="dice_opt_five">5 Dice - Big Bounty</string>
+    <string name="dice_opt_six">6 Dice - Generous God</string>
+
+    <string name="ones_opt_no_reroll">Nothing: no rerolls</string>
+    <string name="ones_opt_reroll">Reroll 1s</string>
+    <string name="ones_opt_reroll_once">Reroll 1s once</string>
+    <string name="ones_opt_reroll_one">Reroll one 1</string>
+
+    <string name="img_descriptor">Picture of the selected dice type</string>
+    <string name="img2_descriptor">Picture of a 2-sided die</string>
+    <string name="img4_descriptor">Picture of a 4-sided die</string>
+    <string name="img6_descriptor">Picture of a 6-sided die</string>
+    <string name="img8_descriptor">Picture of a 8-sided die</string>
+    <string name="img10_descriptor">Picture of a 10-sided die</string>
+    <string name="img12_descriptor">Picture of a 12-sided die</string>
+    <string name="img20_descriptor">Picture of a 20-sided die</string>
+    <string name="img100_descriptor">Picture of a 100-sided die</string>
+
+</resources>

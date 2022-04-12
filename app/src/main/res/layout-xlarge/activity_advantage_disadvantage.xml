@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/advantageRollLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".controller.AdvantageDisadvantageActivity"
+    >
+
+    <android.support.constraint.Guideline
+        android:id="@+id/advDisGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <ImageView
+        android:id="@+id/advDisDice20Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/img20_descriptor"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/advDisGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/d20_green" />
+
+    <!--android:autofillHints="@string/hint_amount"-->
+
+    <!--android:autofillHints="@string/hint_other_type"-->
+
+    <RadioGroup
+        android:id="@+id/advDisModRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="start"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/advDisDice20Img"
+        app:layout_constraintStart_toStartOf="@+id/advDisGuideline"
+        app:layout_constraintTop_toTopOf="@+id/advDisDice20Img">
+
+        <RadioButton
+            android:id="@+id/advDisPositiveRBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/plus_title"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/advDisNegativeRBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/neg_title"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <!--android:autofillHints="@string/hint_modifier"-->
+
+    <TextView
+        android:id="@+id/advDisModifierTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="64dp"
+        android:maxLines="1"
+        android:text="@string/modifier_title"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/advDisModRadioGroup"
+        app:layout_constraintTop_toTopOf="@+id/advDisDice20Img" />
+
+    <EditText
+        android:id="@+id/advDisModifierTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/advDisModifierTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/advDisModifierTitle"
+        app:layout_constraintTop_toBottomOf="@+id/advDisModifierTitle" />
+
+    <RadioGroup
+        android:id="@+id/advDisChoiceRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="start"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/advDisDice20Img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/advDisModifierTitle"
+        app:layout_constraintTop_toTopOf="@+id/advDisDice20Img">
+
+        <RadioButton
+            android:id="@+id/advDisAdvantageRBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/advantage" />
+
+        <RadioButton
+            android:id="@+id/advDisDisadvantageRBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/disadvantage" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/advDisRollBtn"
+        android:layout_width="0dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="rollDoubleDice"
+        android:text="@string/roll_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/advDisDice20Img" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/advDisRollHistoryView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/advDisClearBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/advDisRollBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/advDisBackBtn"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="back"
+        android:text="@string/back_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/advDisClearBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/advDisClearBtn"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="clearAdDisvantageHistory"
+        android:text="@string/clear_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/advDisBackBtn" />
+
+</android.support.constraint.ConstraintLayout>

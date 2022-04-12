@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+
+        <item name="android:fontFamily">@font/asul</item>
+        <item name="android:textSize">26sp</item>
+
+        <item name="android:autoSizeTextType" tools:targetApi="o">uniform</item>
+        <item name="android:autoSizeMinTextSize" tools:targetApi="o">20sp</item>
+        <item name="android:autoSizeMaxTextSize" tools:targetApi="o">40sp</item>
+        <item name="android:autoSizeStepGranularity" tools:targetApi="o">1sp</item>
+
+        <item name="android:importantForAutofill" tools:targetApi="o">no</item>
+
+        <item name="radioButtonStyle">@style/RadioButtonStyle</item>
+        <item name="android:radioButtonStyle">@style/RadioButtonStyle</item>
+
+        <item name="buttonStyle">@style/ButtonStyle</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
+
+        <item name="editTextStyle">@style/EditTextStyle</item>
+        <item name="android:editTextStyle">@style/EditTextStyle</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:fontFamily">@font/asul</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:autoSizeTextType" tools:targetApi="o">none</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:importantForAutofill" tools:targetApi="o">no</item>
+    </style>
+
+</resources>

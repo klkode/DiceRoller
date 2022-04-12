@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.MultiDiceRollActivity"
+    android:focusableInTouchMode="true"
+    android:id="@+id/multiRollLayout">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/multiGuideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.125" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/multiGuideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/multiGuideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.375" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/multiGuideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/multid4Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/img4_descriptor"
+        android:onClick="increase4D"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/d4_green" />
+
+    <ImageView
+        android:id="@+id/multid6Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/img6_descriptor"
+        android:onClick="increase6D"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintStart_toStartOf="@+id/multiGuideline1"
+        app:layout_constraintTop_toTopOf="@+id/multid4Img"
+        app:srcCompat="@drawable/d6_green" />
+
+    <ImageView
+        android:id="@+id/multid8Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/img8_descriptor"
+        android:onClick="increase8D"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline3"
+        app:layout_constraintStart_toEndOf="@+id/multiGuideline2"
+        app:layout_constraintTop_toTopOf="@+id/multid6Img"
+        app:srcCompat="@drawable/d8_green" />
+
+    <ImageView
+        android:id="@+id/multid2Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/img2_descriptor"
+        android:onClick="increase2D"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toEndOf="@+id/multiGuideline4"
+        app:layout_constraintStart_toStartOf="@+id/multiGuideline3"
+        app:layout_constraintTop_toTopOf="@+id/multid8Img"
+        app:srcCompat="@drawable/d2_green" />
+
+    <EditText
+        android:id="@+id/multid4Txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/multid4Img"
+        app:layout_constraintStart_toStartOf="@+id/multid4Img"
+        app:layout_constraintTop_toBottomOf="@+id/multid4Img" />
+
+    <EditText
+        android:id="@+id/multid6Txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/multid6Img"
+        app:layout_constraintStart_toStartOf="@+id/multid6Img"
+        app:layout_constraintTop_toTopOf="@+id/multid4Txt" />
+
+    <EditText
+        android:id="@+id/multid8Txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/multid8Img"
+        app:layout_constraintStart_toStartOf="@+id/multid8Img"
+        app:layout_constraintTop_toTopOf="@+id/multid6Txt" />
+
+    <EditText
+        android:id="@+id/multid2Txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/multid2Img"
+        app:layout_constraintStart_toStartOf="@+id/multid2Img"
+        app:layout_constraintTop_toTopOf="@+id/multid8Txt" />
+
+    <ImageView
+        android:id="@+id/multid10Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/img10_descriptor"
+        android:onClick="increase10D"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multid4Txt"
+        app:srcCompat="@drawable/d10_green" />
+
+    <ImageView
+        android:id="@+id/multid12Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/img12_descriptor"
+        android:onClick="increase12D"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintStart_toStartOf="@+id/multiGuideline1"
+        app:layout_constraintTop_toTopOf="@+id/multid10Img"
+        app:srcCompat="@drawable/d12_green" />
+
+    <ImageView
+        android:id="@+id/multid20Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/img20_descriptor"
+        android:onClick="increase20D"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline3"
+        app:layout_constraintStart_toEndOf="@+id/multiGuideline2"
+        app:layout_constraintTop_toTopOf="@+id/multid12Img"
+        app:srcCompat="@drawable/d20_green" />
+
+    <ImageView
+        android:id="@+id/multid100Img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/img100_descriptor"
+        android:onClick="increase100D"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toEndOf="@+id/multiGuideline4"
+        app:layout_constraintStart_toStartOf="@+id/multiGuideline3"
+        app:layout_constraintTop_toTopOf="@+id/multid20Img"
+        app:srcCompat="@drawable/d100_green" />
+
+    <EditText
+        android:id="@+id/multid10Txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/multid10Img"
+        app:layout_constraintStart_toStartOf="@+id/multid10Img"
+        app:layout_constraintTop_toBottomOf="@+id/multid10Img" />
+
+    <EditText
+        android:id="@+id/multid12Txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/multid12Img"
+        app:layout_constraintStart_toStartOf="@+id/multid12Img"
+        app:layout_constraintTop_toTopOf="@+id/multid10Txt" />
+
+    <EditText
+        android:id="@+id/multid20Txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/multid20Img"
+        app:layout_constraintStart_toStartOf="@+id/multid20Img"
+        app:layout_constraintTop_toTopOf="@+id/multid12Txt" />
+
+    <EditText
+        android:id="@+id/multid100Txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/multid100Img"
+        app:layout_constraintStart_toStartOf="@+id/multid100Img"
+        app:layout_constraintTop_toTopOf="@+id/multid20Txt" />
+
+    <TextView
+        android:id="@+id/multiModifierLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/modifier_title"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiOtherAmountTxt"
+        android:maxLines="1"/>
+
+    <RadioGroup
+        android:id="@+id/multiRGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/multiOtherAmountTxt"
+        app:layout_constraintTop_toBottomOf="@+id/multiModifierLbl">
+
+        <RadioButton
+            android:id="@+id/multiPlusRBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/plus_title"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/multiMinusRBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/neg_title"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/multiModifierTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/multiRGroup"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintStart_toEndOf="@+id/multiRGroup"
+        app:layout_constraintTop_toTopOf="@+id/multiRGroup" />
+
+    <TextView
+        android:id="@+id/multiOtherDiceLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/other_dice_title"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multid10Txt"
+        android:maxLines="1"/>
+
+    <EditText
+        android:id="@+id/multiOtherAmountTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline1"
+        app:layout_constraintStart_toStartOf="@+id/multid10Txt"
+        app:layout_constraintTop_toBottomOf="@+id/multiOtherDiceLbl" />
+
+    <TextView
+        android:id="@+id/multiDLbl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/d_lbl"
+        app:layout_constraintBottom_toBottomOf="@+id/multiOtherAmountTxt"
+        app:layout_constraintStart_toEndOf="@+id/multiGuideline1"
+        app:layout_constraintTop_toTopOf="@+id/multiOtherAmountTxt"
+        android:maxLines="1"/>
+
+    <EditText
+        android:id="@+id/multiDOtherTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/hint_other_question"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintStart_toEndOf="@+id/multiDLbl"
+        app:layout_constraintTop_toTopOf="@+id/multiOtherAmountTxt" />
+
+    <Button
+        android:id="@+id/multiRollBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="rollMultiDice"
+        android:text="@string/roll_btn"
+        app:layout_constraintBottom_toTopOf="@+id/multiBackBtn"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintTop_toBottomOf="@+id/multiResetBtn" />
+
+    <Button
+        android:id="@+id/multiResetBtn"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="resetMulti"
+        android:text="@string/reset_btn"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintTop_toTopOf="@+id/multiOtherDiceLbl" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/multiRollHistoryView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/multiClearBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/multiGuideline4"
+        app:layout_constraintTop_toTopOf="@+id/multid2Img" />
+
+    <Button
+        android:id="@+id/multiBackBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="back"
+        android:text="@string/back_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/multiClearBtn"
+        app:layout_constraintEnd_toStartOf="@+id/multiGuideline4"
+        app:layout_constraintStart_toStartOf="@+id/multiGuideline2"
+        app:layout_constraintTop_toTopOf="@+id/multiClearBtn" />
+
+    <Button
+        android:id="@+id/multiClearBtn"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="clearMultiHistory"
+        android:text="@string/clear_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/multiRollHistoryView"
+        app:layout_constraintStart_toStartOf="@+id/multiRollHistoryView" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>
